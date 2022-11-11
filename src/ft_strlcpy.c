@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 16:45:01 by ztrottie          #+#    #+#             */
-/*   Updated: 2022/11/01 17:33:53 by ztrottie         ###   ########.fr       */
+/*   Updated: 2022/11/04 13:19:43 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 
 	i = 0;
+	if (!dst && !src)
+		return (0);
 	if (dstsize != 0)
 	{
 		while (i < dstsize - 1 && src[i])

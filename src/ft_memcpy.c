@@ -6,7 +6,7 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 11:18:30 by ztrottie          #+#    #+#             */
-/*   Updated: 2022/11/01 16:30:42 by ztrottie         ###   ########.fr       */
+/*   Updated: 2022/11/04 13:41:15 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (dst == 0 && src == 0)
+	if (!dst && !src)
 		return (0);
 	while (i < n)
 	{

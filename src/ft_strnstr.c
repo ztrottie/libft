@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 17:16:35 by ztrottie          #+#    #+#             */
-/*   Updated: 2022/11/04 13:20:41 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/11/04 14:28:01 by ztrottie          #+#    #+#             */
+/*   Updated: 2022/11/04 16:50:59 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int	i;
+	size_t	i;
+	size_t	nee_len;
 
-	if (!s)
-		return (0);
 	i = 0;
-	while (s[i] != (const char)c && s[i])
+	nee_len = ft_strlen(needle);
+	if (nee_len == 0)
+		return ((char *)haystack);
+	while (haystack[i] && (i + nee_len) <= len)
+	{
+		if (ft_strncmp(haystack + i, needle, nee_len) == 0)
+			return ((char *)haystack + i);
 		i++;
-	if ((const char)c == s[i])
-		return ((char *)s + i);
+	}
 	return (0);
 }
 /*
 int	main(void)
 {
-	char s[] = "tripouille";
-	printf("%s\n", ft_strchr(s, 't' + 257));
-	printf("%s\n", strchr(s, 't' + 257));
+	char *s1 = "AAAAAAAAAAAAA";
+    size_t max = strlen(s1);
+    char *i1 = strnstr(s1, s1, max); 
+	char *i2 = ft_strnstr(s1, s1, max);
+	printf("%s", i2);
 }*/

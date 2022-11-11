@@ -1,28 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 10:26:59 by ztrottie          #+#    #+#             */
-/*   Updated: 2022/11/04 13:41:26 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/11/10 21:47:13 by ztrottie          #+#    #+#             */
+/*   Updated: 2022/11/10 22:27:09 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	size_t		i;
+	char		*str;
 
 	i = 0;
-	if (!b)
+	if (!s)
+		return (0);
+	if (start > ft_strlen(s))
+		start = ft_strlen(s);
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	str = (char *)malloc(len + 1);
+	if (!str)
 		return (0);
 	while (i < len)
 	{
-		*(unsigned char *)(b + i) = c;
+		str[i] = s[i + start];
 		i++;
 	}
-	return (b);
+	str[i] = 0;
+	return (str);
 }
+/*
+int	main(void)
+{
+	char *str = "01234";
+	size_t size = 10;
+	char *ret = ft_substr(str, 10, size);
+
+	printf("%s\n", ret);
+}*/

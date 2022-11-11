@@ -1,28 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/26 10:26:59 by ztrottie          #+#    #+#             */
-/*   Updated: 2022/11/04 13:41:26 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/11/10 23:08:26 by ztrottie          #+#    #+#             */
+/*   Updated: 2022/11/10 23:51:12 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-void	*ft_memset(void *b, int c, size_t len)
+static size_t	ft_last_print(char const *s1)
 {
-	size_t	i;
+	int	len;
 
-	i = 0;
-	if (!b)
-		return (0);
-	while (i < len)
+	len = ft_strlen(s1);
+	while (len >= 0)
 	{
-		*(unsigned char *)(b + i) = c;
-		i++;
+		if (ft_isprint(s1[len]))
+			return (len);
+		len--;
 	}
-	return (b);
+	return (len);
+}
+
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	char	*ptr;
+	size_t	restart;
+	size_t	i;
+	
+	if (!s1)
+		return (0);
+	ptr = (char *)malloc(ft_strlen(s1));
+	if (!ptr)
+		return (0);
+	i = 0;
+	while (!ft_isprint(s1[i]))
+	{
+		ptr[i]
+	}
 }
