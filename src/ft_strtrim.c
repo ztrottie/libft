@@ -6,26 +6,33 @@
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/10 23:08:26 by ztrottie          #+#    #+#             */
-/*   Updated: 2022/11/11 00:26:38 by ztrottie         ###   ########.fr       */
+/*   Updated: 2022/11/11 18:05:58 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-static size_t	ft_last_print(char const *s1)
-{
-	int	len;
-
-	len = ft_strlen(s1);
-	while (len >= 0)
-	{
-		if (ft_isprint(s1[len]))
-			return (len);
-		len--;
-	}
-	return (len);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
+	size_t	i;
+	size_t	j;
+
+	if (!s1 || !set)
+		return (0);
+	if (s1[0] == 0)
+		return (ft_strdup(s1));
+	i = 0;
+	while (ft_strchr(set, s1[i]) != 0 && s1[i])
+		i++;
+	j = ft_strlen(s1);
+	while (ft_strchr(set, s1[j]) != 0 && s1[j - 1])
+		j--;
+	return (ft_substr(s1, i, (j - i + 1)));
 }
+/*
+int	main(void)
+{
+	char *ret = ft_strtrim("", "");
+
+	printf("%s", ret);
+}*/
