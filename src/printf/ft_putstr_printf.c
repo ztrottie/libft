@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putstr_printf.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 16:15:11 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/02 15:30:16 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/11/23 10:27:07 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/03/02 15:35:23 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../../includes/ft_printf.h"
+#include "../../includes/string.h"
 
-# include "includes/comparison.h"
-# include "includes/conversion.h"
-# include "includes/list.h"
-# include "includes/memory.h"
-# include "includes/string.h"
-# include "includes/write_fd.h"
-# include "includes/ft_printf.h"
+int	ft_putstr_printf(char *s)
+{
+	size_t	i;
 
-#endif
+	i = 0;
+	if (!s)
+		s = "(null)";
+	write(1, s, ft_strlen(s));
+	return (ft_strlen(s));
+}

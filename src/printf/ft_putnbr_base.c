@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 16:15:11 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/02 15:30:16 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/11/23 10:31:42 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/03/02 15:34:37 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../../includes/ft_printf.h"
 
-# include "includes/comparison.h"
-# include "includes/conversion.h"
-# include "includes/list.h"
-# include "includes/memory.h"
-# include "includes/string.h"
-# include "includes/write_fd.h"
-# include "includes/ft_printf.h"
+int	ft_putnbr_base(unsigned int nbr, char maj)
+{
+	unsigned int	nb;
+	char			*hexa;
+	int				i;
 
-#endif
+	i = 0;
+	if (maj == 'X')
+		hexa = "0123456789ABCDEF";
+	else
+		hexa = "0123456789abcdef";
+	nb = nbr;
+	if (nb / ft_strlen(hexa) != 0)
+		ft_putnbr_base((nb / ft_strlen(hexa)), maj);
+	ft_putchar_fd(hexa[nb % ft_strlen(hexa)], 1);
+	return (ft_hexa_len(nbr));
+}
