@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free.c                                          :+:      :+:    :+:   */
+/*   ft_strishexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
+/*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 15:38:26 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/04/15 09:14:56 by ztrottie         ###   ########.fr       */
+/*   Created: 2023/05/02 14:10:50 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/05/14 10:27:25 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/memory.h"
+#include "../../includes/conversion.h"
 
-void	*ft_x2free(void **p)
+int	ft_strishexa(char *str)
 {
 	int	i;
 
-	if (p)
+	i = 0;
+	while (str[i])
 	{
-		i = -1;
-		while (p[++i])
-			ft_free(p[i]);
-		ft_free(p);
+		str[i] = ft_toupper(str[i]);
+		if (!(str[i] >= '0' && str[i] <= '9') \
+		|| !(str[i] >= 'A' && str[i] <= 'F'))
+			return (1);
+		i++;
 	}
-	return (NULL);
-}
-
-void	*ft_free(void *p)
-{
-	if (p)
-		free(p);
-	return (NULL);
+	return (0);
 }

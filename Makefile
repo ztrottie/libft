@@ -18,13 +18,16 @@ COMP_SRCS	=	ft_isalnum.c \
 				ft_isalpha.c \
 				ft_isascii.c \
 				ft_isdigit.c \
-				ft_isprint.c
+				ft_isprint.c \
+				ft_isint.c \
+				ft_strishexa.c
 
 
 CONV_SRCS	=	ft_atoi.c \
 				ft_itoa.c \
 				ft_tolower.c \
-				ft_toupper.c
+				ft_toupper.c \
+				ft_liatoi.c
 
 GET_SRCS	=	get_next_line_utils.c \
 				get_next_line.c
@@ -70,7 +73,8 @@ STR_SRCS	=	ft_split.c \
 				ft_strnstr.c \
 				ft_strrchr.c \
 				ft_strtrim.c \
-				ft_substr.c
+				ft_substr.c \
+				ft_word_count.c
 
 WRITE_SRCS	=	ft_putchar_fd.c \
 				ft_putendl_fd.c \
@@ -121,13 +125,13 @@ ${BINDIR}%.o: ${WRITE_DIR}%.c
 
 $(NAME): $(COMP_OBJS) $(CONV_OBJS) $(GET_OBJS) $(LIST_OBJS) $(MEM_OBJS) $(PRINT_OBJS) $(STR_OBJS) $(WRITE_OBJS)
 	@ar -rcs  $(NAME) $(COMP_OBJS) $(CONV_OBJS) $(GET_OBJS) $(LIST_OBJS) $(MEM_OBJS) $(PRINT_OBJS) $(STR_OBJS) $(WRITE_OBJS)
- 
+
 clean:  
 	@rm -fr $(BINDIR)
- 
+
 fclean: clean
 	@rm -f $(NAME)
- 
+
 re: fclean all
 
 .PHONY:	all fclean clean re

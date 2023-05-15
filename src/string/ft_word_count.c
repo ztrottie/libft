@@ -1,23 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   comparison.h                                       :+:      :+:    :+:   */
+/*   ft_word_count.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 10:48:36 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/04/18 13:13:16 by ztrottie         ###   ########.fr       */
+/*   Created: 2023/04/15 14:19:22 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/04/15 14:19:49 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COMPARISON_H
-# define COMPARISON_H
+#include "../../includes/string.h"
 
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_isascii(int c);
-int	ft_isdigit(int c);
-int	ft_isprint(int c);
-int	ft_isint(char *str);
+size_t	ft_word_count(char const *s, char c)
+{
+	size_t	i;
+	size_t	count;
+	int		trigger;
 
-#endif
+	i = 0;
+	trigger = 1;
+	count = 0;
+	while (i <= ft_strlen(s))
+	{
+		if ((s[i] == c || s[i] == 0) && trigger == 0)
+		{
+			count++;
+			trigger = 1;
+		}
+		else if (s[i] != c && trigger == 1)
+			trigger = 0;
+		i++;
+	}
+	return (count + 1);
+}
