@@ -1,39 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/04 14:48:21 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/06/13 16:37:13 by ztrottie         ###   ########.fr       */
+/*   Created: 2023/06/13 16:36:34 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/06/13 16:38:51 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/comparison.h"
-
-int	ft_atoi(const char *str)
+int	ft_isspace(char c)
 {
-	int	nb;
-	int	sign;
-	int	i;
-
-	nb = 0;
-	i = 0;
-	sign = 1;
-	while (str[i] && is_space(str[i]))
-		i++;
-	if (str[i] && (str[i] == '-' || str[i] == '+'))
-	{
-		if (str[i] == '-')
-			sign *= -1;
-		i++;
-	}
-	while (str[i] && str[i] >= '0' && str[i] <= '9')
-	{
-		nb *= 10;
-		nb += str[i] - 48;
-		i++;
-	}
-	return (nb * sign);
+	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r')
+		return (1);
+	else if (c == 32)
+		return (1);
+	else
+		return (0);
 }

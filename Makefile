@@ -20,7 +20,8 @@ COMP_SRCS	=	ft_isalnum.c \
 				ft_isdigit.c \
 				ft_isprint.c \
 				ft_isint.c \
-				ft_strishexa.c
+				ft_strishexa.c \
+				ft_isspace.c
 
 
 CONV_SRCS	=	ft_atoi.c \

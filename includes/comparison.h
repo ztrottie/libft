@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   comparison.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
+/*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 10:48:36 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/04/18 13:13:16 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/06/13 16:38:58 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ int	ft_isascii(int c);
 int	ft_isdigit(int c);
 int	ft_isprint(int c);
 int	ft_isint(char *str);
+int	ft_isspace(char c);
 
 #endif
