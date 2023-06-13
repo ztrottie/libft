@@ -6,7 +6,7 @@
 /*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/04 14:48:21 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/06/13 16:37:13 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/06/13 17:05:07 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	ft_atoi(const char *str)
 	nb = 0;
 	i = 0;
 	sign = 1;
-	while (str[i] && is_space(str[i]))
+	while (str[i] && ft_isspace(str[i]))
 		i++;
 	if (str[i] && (str[i] == '-' || str[i] == '+'))
 	{

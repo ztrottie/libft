@@ -93,7 +93,7 @@ WRITE_OBJS		=	$(addprefix ${BINDIR}, ${WRITE_SRCS:.c=.o})
 
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
- 
+
 all: $(BINDIR) $(NAME)
 	@echo "libft compiled"
 
