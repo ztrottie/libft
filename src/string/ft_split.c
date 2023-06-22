@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
+/*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/11 18:07:34 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/04/18 14:35:07 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/06/21 14:28:39 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ char	**ft_split(char const *s, char c)
 			j++;
 		}
 		i += len;
-		ptr[j] = 0;
 	}
 	return (ptr);
 }
