@@ -49,7 +49,8 @@ MEM_SRCS	=	ft_bzero.c \
 				ft_memchr.c \
 				ft_memcmp.c \
 				ft_memmove.c \
-				ft_memset.c
+				ft_memset.c \
+				ft_memcpy.c
 
 PRINT_SRCS	=	ft_hexa_len.c \
 				ft_pointer.c \
