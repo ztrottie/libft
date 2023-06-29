@@ -9,6 +9,7 @@ GET_DIR			=	src/get_next_line/
 LIST_DIR		=	src/list/
 MEM_DIR			=	src/memory/
 PRINT_DIR		=	src/printf/
+PRIND_DIR		=	src/printf_fd/
 STR_DIR			=	src/string/
 WRITE_DIR		=	src/write_fd/
 
@@ -62,6 +63,16 @@ PRINT_SRCS	=	ft_hexa_len.c \
 				ft_putnbr_u.c \
 				ft_putstr_printf.c
 
+PRIND_SRCS	=	ft_hexa_len_fd.c \
+				ft_pointer_fd.c \
+				ft_printf_fd.c \
+				ft_putnbr_base_ul_fd.c \
+				ft_putnbr_base_fd.c \
+				ft_putnbr_len_fd.c \
+				ft_putnbr_printf_fd.c \
+				ft_putnbr_u_fd.c \
+				ft_putstr_printf_fd.c
+
 STR_SRCS	=	ft_split.c \
 				ft_strchr.c \
 				ft_strdup.c \
@@ -89,6 +100,7 @@ GET_OBJS		=	$(addprefix ${BINDIR}, ${GET_SRCS:.c=.o})
 LIST_OBJS		=	$(addprefix ${BINDIR}, ${LIST_SRCS:.c=.o})
 MEM_OBJS		=	$(addprefix ${BINDIR}, ${MEM_SRCS:.c=.o})
 PRINT_OBJS		=	$(addprefix ${BINDIR}, ${PRINT_SRCS:.c=.o})
+PRIND_OBJS		=	$(addprefix ${BINDIR}, ${PRIND_SRCS:.c=.o})
 STR_OBJS		=	$(addprefix ${BINDIR}, ${STR_SRCS:.c=.o})
 WRITE_OBJS		=	$(addprefix ${BINDIR}, ${WRITE_SRCS:.c=.o})
 
@@ -119,14 +131,17 @@ ${BINDIR}%.o: ${MEM_DIR}%.c
 ${BINDIR}%.o: ${PRINT_DIR}%.c
 	@${CC} ${CFLAGS} -I${INCDIR} -I. -c $< -o $@
 
+${BINDIR}%.o: ${PRIND_DIR}%.c
+	@${CC} ${CFLAGS} -I${INCDIR} -I. -c $< -o $@
+
 ${BINDIR}%.o: ${STR_DIR}%.c
 	@${CC} ${CFLAGS} -I${INCDIR} -I. -c $< -o $@
 
 ${BINDIR}%.o: ${WRITE_DIR}%.c
 	@${CC} ${CFLAGS} -I${INCDIR} -I. -c $< -o $@
 
-$(NAME): $(COMP_OBJS) $(CONV_OBJS) $(GET_OBJS) $(LIST_OBJS) $(MEM_OBJS) $(PRINT_OBJS) $(STR_OBJS) $(WRITE_OBJS)
-	@ar -rcs  $(NAME) $(COMP_OBJS) $(CONV_OBJS) $(GET_OBJS) $(LIST_OBJS) $(MEM_OBJS) $(PRINT_OBJS) $(STR_OBJS) $(WRITE_OBJS)
+$(NAME): $(COMP_OBJS) $(CONV_OBJS) $(GET_OBJS) $(LIST_OBJS) $(MEM_OBJS) $(PRINT_OBJS) $(STR_OBJS) $(WRITE_OBJS) $(PRIND_OBJS)
+	@ar -rcs  $(NAME) $(COMP_OBJS) $(CONV_OBJS) $(GET_OBJS) $(LIST_OBJS) $(MEM_OBJS) $(PRINT_OBJS) $(STR_OBJS) $(WRITE_OBJS) $(PRIND_OBJS)
 
 clean:  
 	@rm -fr $(BINDIR)
