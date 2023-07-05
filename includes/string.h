@@ -6,7 +6,7 @@
 /*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/02 10:56:59 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/06/22 12:10:51 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/07/05 11:35:21 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,6 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_word_count(char const *s, char c);
-size_t	ft_x2strlen(const char **s);
+size_t	ft_x2strlen(char **s);
 
 #endif
