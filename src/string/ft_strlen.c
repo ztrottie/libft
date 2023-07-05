@@ -6,7 +6,7 @@
 /*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/26 09:57:22 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/06/22 12:10:16 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/07/05 11:33:49 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-size_t	ft_x2strlen(const char **s)
+size_t	ft_x2strlen(char **s)
 {
 	size_t	i;
 
