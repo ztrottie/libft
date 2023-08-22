@@ -6,15 +6,14 @@
 /*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/13 16:36:34 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/06/27 03:30:59 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/08/22 14:48:45 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isspace(char c)
 {
-	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r')
-		return (1);
-	else if (c == 32)
+	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r' \
+	|| c == 32)
 		return (1);
 	else
 		return (0);
