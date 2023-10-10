@@ -6,7 +6,7 @@
 /*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:11:40 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/05/11 11:17:17 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/10/10 12:12:38 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,6 @@
 char	*get_next_line(int fd);
 void	*ft_get_bzero(void *p, size_t size);
 char	*ft_get_strjoin(char *s1, char *s2);
+char	**split_get_next_line(int fd, char split);
 
 #endif

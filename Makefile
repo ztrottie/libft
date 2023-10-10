@@ -30,7 +30,8 @@ CONV_SRCS	=	ft_atoi.c \
 				ft_liatoi.c
 
 GET_SRCS	=	get_next_line_utils.c \
-				get_next_line.c
+				get_next_line.c \
+				split_get_next_line.c
 
 LIST_SRCS	=	ft_lstadd_back.c \
 				ft_lstadd_front.c \
