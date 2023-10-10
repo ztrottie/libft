@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   comparison.h                                       :+:      :+:    :+:   */
+/*   ft_putnbr_printf_fd.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 10:48:36 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/06/13 16:38:58 by ztrottie         ###   ########.fr       */
+/*   Created: 2022/11/23 10:55:43 by ztrottie          #+#    #+#             */
+/*   Updated: 2023/06/29 14:42:32 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef COMPARISON_H
-# define COMPARISON_H
+#include "../../includes/ft_printf_fd.h"
 
-int	ft_isalnum(int c);
-int	ft_isalpha(int c);
-int	ft_isascii(int c);
-int	ft_isdigit(int c);
-int	ft_isprint(int c);
-int	ft_isint(char *str);
-int	ft_isspace(char c);
+int	ft_putnbr_printf_fd(int n, int fd)
+{
+	unsigned int	nbr;
 
-#endif
+	if (n < 0)
+	{
+		nbr = n * -1;
+		ft_putchar_fd('-', 1);
+	}
+	else
+		nbr = n;
+	if (nbr / 10 != 0)
+		ft_putnbr_printf_fd(nbr / 10, fd);
+	ft_putchar_fd(nbr % 10 + '0', fd);
+	return (ft_putnbr_len_fd(n));
+}

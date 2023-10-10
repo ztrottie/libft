@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_word_count.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
+/*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 14:19:22 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/04/15 14:19:49 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/06/21 14:25:58 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ size_t	ft_word_count(char const *s, char c)
 			trigger = 0;
 		i++;
 	}
-	return (count + 1);
+	return (count);
 }
