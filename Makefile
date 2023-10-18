@@ -29,7 +29,8 @@ CONV_SRCS	=	ft_atoi.c \
 				ft_itoa.c \
 				ft_tolower.c \
 				ft_toupper.c \
-				ft_liatoi.c
+				ft_liatoi.c \
+				ft_atof.c
 
 GET_SRCS	=	get_next_line_utils.c \
 				get_next_line.c \
