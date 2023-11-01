@@ -34,7 +34,8 @@ CONV_SRCS	=	ft_atoi.c \
 
 GET_SRCS	=	get_next_line_utils.c \
 				get_next_line.c \
-				split_get_next_line.c
+				split_get_next_line.c \
+				count_next_line.c
 
 LIST_SRCS	=	ft_lstadd_back.c \
 				ft_lstadd_front.c \
@@ -91,7 +92,8 @@ STR_SRCS	=	ft_split.c \
 				ft_substr.c \
 				ft_word_count.c \
 				ft_strcmp.c \
-				ft_strsearch.c
+				ft_strsearch.c \
+				ft_count_char.c
 
 WRITE_SRCS	=	ft_putchar_fd.c \
 				ft_putendl_fd.c \

@@ -6,7 +6,7 @@
 /*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:11:40 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/11/01 13:11:06 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/11/01 13:35:06 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,6 @@ void	*ft_memset(void *b, int c, size_t len);
 void	*ft_free(void *p);
 size_t	ft_strlen(const char *s);
 char	*ft_get_strjoin(char *s1, char *s2);
+size_t	count_next_line(int fd);
 
 #endif
