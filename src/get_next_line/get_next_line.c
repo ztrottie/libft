@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ztrottie <zakytrottier@hotmail.fr>         +#+  +:+       +#+        */
+/*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:11:00 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/03/02 16:40:03 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/11/01 13:11:17 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ char	*ft_clean_stash(char *stash, char *line)
 		new_stash[i] = stash[len_line + i];
 		i++;
 	}
-	if (*new_stash == 0)
-		new_stash = ft_free(new_stash);
 	return (stash = ft_free(stash), new_stash);
 }
 
@@ -69,28 +67,28 @@ char	*ft_make_line(char *stash, ssize_t nbyte)
 char	*get_next_line(int fd)
 {
 	ssize_t		nbyte;
-	char		*buffer;
-	static char	*stash;
+	char		*buf;
+	static char	*stash[OPEN_MAX];
 	char		*line;
 
-	if (fd < 0 || BUFFER_SIZE <= 0 || fd > FOPEN_MAX)
+	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	if (!stash)
-		stash = ft_calloc(1, sizeof(char));
-	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
+	if (!stash[fd])
+		stash[fd] = ft_calloc(1, sizeof(char));
+	buf = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	nbyte = BUFFER_SIZE;
-	while (nbyte == BUFFER_SIZE && ft_find(stash, nbyte) == 0)
+	while (nbyte == BUFFER_SIZE && ft_find(stash[fd], nbyte) == 0)
 	{
-		nbyte = read(fd, buffer, BUFFER_SIZE);
+		nbyte = read(fd, buf, BUFFER_SIZE);
 		if (nbyte == -1)
-			return (buffer = ft_free(buffer), stash = ft_free(stash), NULL);
-		stash = ft_get_strjoin(stash, buffer);
-		buffer = ft_get_bzero(buffer, BUFFER_SIZE + 1);
+			return (free(buf), stash[fd] = ft_free(stash[fd]), NULL);
+		stash[fd] = ft_get_strjoin(stash[fd], buf);
+		buf = ft_get_bzero(buf, BUFFER_SIZE + 1);
 	}
-	if (nbyte != 0 || ft_find(stash, nbyte) > 0)
+	if (nbyte != 0 || ft_find(stash[fd], nbyte) > 0)
 	{
-		line = ft_make_line(stash, nbyte);
-		return (ft_free(buffer), stash = ft_clean_stash(stash, line), line);
+		line = ft_make_line(stash[fd], nbyte);
+		return (free(buf), stash[fd] = ft_clean_stash(stash[fd], line), line);
 	}
-	return (free(stash), free(buffer), NULL);
+	return (stash[fd] = ft_free(stash[fd]), ft_free(buf), NULL);
 }
