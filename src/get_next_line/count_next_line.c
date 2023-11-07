@@ -6,7 +6,7 @@
 /*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/01 13:33:14 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/11/01 13:34:52 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/11/07 11:01:21 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	count_next_line(int fd)
 	size_t	count;
 
 	count = 0;
-	if (BUFFER_SIZE <= 0 || fd > OPEN_MAX)
+	if (BUFFER_SIZE <= 0 || fd > MAX_OPEN)
 		return (-1);
 	buffer = ft_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!buffer)

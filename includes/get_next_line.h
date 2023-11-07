@@ -6,7 +6,7 @@
 /*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:11:40 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/11/01 13:35:06 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/11/07 11:01:04 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,15 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdlib.h>
+# include <stdio.h>
+
+# ifdef FOPEN_MAX
+#  define MAX_OPEN FOPEN_MAX
+# endif
+
+# ifdef OPEN_MAX
+#  define MAX_OPEN OPEN_MAX
+# endif
 
 char	*get_next_line(int fd);
 void	*ft_calloc(size_t count, size_t size);

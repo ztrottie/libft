@@ -6,7 +6,7 @@
 /*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:11:00 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/11/01 13:11:17 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/11/07 11:01:30 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ char	*get_next_line(int fd)
 {
 	ssize_t		nbyte;
 	char		*buf;
-	static char	*stash[OPEN_MAX];
+	static char	*stash[MAX_OPEN];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
