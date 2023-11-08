@@ -6,7 +6,7 @@
 /*   By: ztrottie <ztrottie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/24 13:11:40 by ztrottie          #+#    #+#             */
-/*   Updated: 2023/11/07 11:01:04 by ztrottie         ###   ########.fr       */
+/*   Updated: 2023/11/08 08:55:03 by ztrottie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 #  define MAX_OPEN FOPEN_MAX
 # endif
 
-# ifdef OPEN_MAX
+# ifndef FOPEN_MAX
 #  define MAX_OPEN OPEN_MAX
 # endif
 
